@@ -10,3 +10,14 @@ export const updateHotel = async (req, res, next) => {
     res.status(200).json(updatedHotel);
 }
 
+export const deleteHotel = async (req, res, next) => {
+
+}
+
+export const getHotel = async (req, res, next) => {
+
+}
+
+export const getAllHotels = async (req, res, next) => {
+
+}
