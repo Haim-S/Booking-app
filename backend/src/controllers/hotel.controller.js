@@ -13,13 +13,15 @@ export const updateHotel = async (req, res, next) => {
 }
 
 export const deleteHotel = async (req, res, next) => {
-const p = await Hotel.findByIdAndDelete(req.params.id);
-if(p === null) return next(createError(204, "Sorry but the hotel is not found"));
+const hotel = await Hotel.findByIdAndDelete(req.params.id);
+// if(p === null) return next(createError(204, "Sorry but the hotel is not found"));
+if(hotel === null){return res.status(200).json("Sorry but the hotel is not found")};
 res.status(200).json("Hotel has been deleted.");
 }
 
 export const getHotel = async (req, res, next) => {
 const hotel = await Hotel.findById(req.params.id);
+if(hotel === null){return res.status(200).json("Sorry but the hotel is not found")};
 res.status(200).json(hotel);
 }
 
