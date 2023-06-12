@@ -8,12 +8,12 @@ import {
     getHotelRooms,
     getHotels,
     updateHotel,
-} from "../controllers/hotel.controller";
-import {tryCatchError} from "../utils/error";
+} from "../controllers/hotel.controller.js";
+import {tryCatchError} from "../utils/error.js";
 const router = express.Router();
 
 // CREATE
-router.post("/",tryCatchError(createHotel));
+router.post("/create",tryCatchError(createHotel));
 
 // UPDATE
 router.put("/:id", tryCatchError(updateHotel));
