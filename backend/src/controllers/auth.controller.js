@@ -3,7 +3,7 @@ import User from "../models/User.js";
 import pkg from 'bcryptjs';
 const {hashSync, compare} = pkg;
 import {createError} from "../utils/error.js";
-import {servicesTokens} from "../services/jwt.service.js";
+import servicesTokens from "../services/jwt.service.js";
 
 export const register = async (req, res, next) => {
     const hashPassword = hashSync(req.body.password, 10);

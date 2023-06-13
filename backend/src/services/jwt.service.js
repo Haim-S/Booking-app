@@ -9,9 +9,8 @@ const jwtConfig = {
 const createAccessToken = (userId, isAdmin) => {
     try {
         const token = jwt.sign(
-            {id: userId, isAdmin: isAdmin},
-            jwtConfig.ac_secret, {
-                expiresIn: new Date(jwtConfig.ac_expired_millisecond).getTime(),
+            {id: userId, isAdmin: isAdmin}, process.env.JWT_ACCESS_TOKEN_SECRET,{
+                expiresIn: '30m'
             }
         )
         return token;
@@ -22,6 +21,7 @@ const createAccessToken = (userId, isAdmin) => {
 };
 
 const createRefreshToken = (userId, isAdmin) => {
+    
     try {
         const token = jwt.sign(
             {id: userId, isAdmin: isAdmin},
@@ -46,9 +46,11 @@ const verifyAccessToken = (token) => {
     }
 }
 
-export const servicesTokens = {
+const servicesTokens = {
     createAccessToken,
     createRefreshToken,
     verifyAccessToken,
-}
+};
+
+export default servicesTokens
 
