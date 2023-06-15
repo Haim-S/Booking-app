@@ -38,6 +38,7 @@ await Room.findByIdAndDelete(req.params.id);
 await Hotel.findByIdAndUpdate(hotelId, {
     $pull: {rooms: req.params.id},
 });
+res.status(200).json("Room has been deleted.");
 };
 
 export const getRoom = async (req, res, next) => {

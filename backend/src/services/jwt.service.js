@@ -80,7 +80,7 @@ const verifyUser = (req, res, next)=> {
 }
 
 const verifyAdmin = (req, res, next)=> {
-    verifyAccessToken(req, res, ()=>{
+    verifyAccessToken(req, res, next, ()=>{
         // console.log(req.user);
         if(req.user.isAdmin){
             next()
