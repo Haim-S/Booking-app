@@ -26,3 +26,16 @@ header{
     padding: 10px;
     border-radius: 20px;
 }
+
+.headerDesc{
+    margin: 20px 0px;
+}
+
+.headerbtn{
+    background-color: #0071c2;
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
