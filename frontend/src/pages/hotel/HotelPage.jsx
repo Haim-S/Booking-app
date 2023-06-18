@@ -1,8 +1,12 @@
 import React from 'react'
 
+
 const HotelPage = () => {
   return (
-    <div>HotelPage</div>
+    <div>
+     
+
+    </div>
   )
 }
 
